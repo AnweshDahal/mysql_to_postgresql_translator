@@ -42,7 +42,7 @@ postgresql://username:password@localhost:5432/databasename #Example
 12. Finally run the main.py script to insert the data into postgresql databse
 
 ## Migrating the data to a cloud database.
-In case you want to migrate to a cloud database service, for example Neon, it is not advised to run the script on the cloud database. Since we might make a huge amount of requests this can cause the db to crash or exhaust your usage quota instead use psql dump to transfer data. Run the following code to do this.
+In case you want to migrate to a cloud database service, for example Neon, it is not advised to run the script on the cloud database, although it is possible to do so. Since we might make a huge number of requests this can cause the db to crash or exhaust your usage quota instead use `pg_dump` and `pg_restore` to transfer data. Run the following code to do this.
 
 ```bash
 pg_dump --no-owner --no-privileges --no-publications --no-subscriptions --no-tablespaces -Fc -v -d "postgresql://<local_database_username>:<local_database_password>@localhost:5432/<local_database_name>" -f database.bak
