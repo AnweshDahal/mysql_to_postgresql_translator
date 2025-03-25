@@ -1,0 +1,6 @@
+.venv
+.env
+*.sql
+*.csv
+*.json
+*.bak
